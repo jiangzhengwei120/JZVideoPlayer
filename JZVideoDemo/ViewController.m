@@ -24,7 +24,6 @@
     #if __has_include(<IJKMediaFrameworkWithSSL/IJKMediaFrameworkWithSSL.h>)
         _player.playbackController = SJIJKMediaPlaybackController.new;
     #endif
-        
     _player.URLAsset = [SJVideoPlayerURLAsset.alloc initWithURL:SourceURL0];
     _player.view.backgroundColor = UIColor.blackColor;
     [self.view addSubview:_player.view];
@@ -33,6 +32,15 @@
         make.left.right.offset(0);
         make.height.equalTo(self.player.view.mas_width).multipliedBy(9/16.0);
     }];
+//    [_player setCanSeekToTime:^BOOL(__kindof SJBaseVideoPlayer * _Nonnull player) {
+//        
+//        
+//        
+//        
+//        return NO;
+//    }];
+    
+   
     // Do any additional setup after loading the view.
 }
 

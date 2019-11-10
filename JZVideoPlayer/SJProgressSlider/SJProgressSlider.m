@@ -119,8 +119,10 @@ NS_ASSUME_NONNULL_BEGIN
     if ( _containerView.frame.size.width == 0 ) return;
     CGFloat point = [tap locationInView:tap.view].x;
     CGFloat value = point / _containerView.frame.size.width * (_maxValue - _minValue);
-    if ( _tappedExeBlock ) _tappedExeBlock(self, value);
-    else [self setValue:value animated:YES];
+    if ( _tappedExeBlock )
+        _tappedExeBlock(self, value);
+    else
+        [self setValue:value animated:YES];
 }
 
 - (void)cancelDragging {

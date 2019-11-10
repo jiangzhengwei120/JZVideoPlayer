@@ -343,11 +343,11 @@
 		75985F1923754EA00020E682 /* SJProgressSlider */ = {
 			isa = PBXGroup;
 			children = (
+				75985F1E23754EA00020E682 /* SJProgressSlider.h */,
 				75985F1A23754EA00020E682 /* SJProgressSlider.m */,
 				75985F1B23754EA00020E682 /* SJCommonProgressSlider.h */,
-				75985F1C23754EA00020E682 /* SJButtonProgressSlider.h */,
 				75985F1D23754EA00020E682 /* SJCommonProgressSlider.m */,
-				75985F1E23754EA00020E682 /* SJProgressSlider.h */,
+				75985F1C23754EA00020E682 /* SJButtonProgressSlider.h */,
 				75985F1F23754EA00020E682 /* SJButtonProgressSlider.m */,
 			);
 			path = SJProgressSlider;

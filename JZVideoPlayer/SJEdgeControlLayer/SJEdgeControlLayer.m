@@ -217,7 +217,7 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     slider.tappedExeBlock = ^(SJProgressSlider * _Nonnull slider, CGFloat location) {
         __strong typeof(_self) self = _self;
         if ( !self ) return;
-        if ( self.videoPlayer.canSeekToTime && self.videoPlayer.canSeekToTime(self.videoPlayer) == NO ) {
+        if (self.videoPlayer.canSeekToTime && self.videoPlayer.canSeekToTime(self.videoPlayer) == NO ) {
             return;
         }
         
@@ -316,7 +316,8 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
 }
 
 - (void)slider:(SJProgressSlider *)slider valueDidChange:(CGFloat)value {
-    if ( slider.isDragging ) [self _onDragMoving:value];
+    if ( slider.isDragging ) 
+        [self _onDragMoving:value];
 }
 
 - (void)sliderDidEndDragging:(SJProgressSlider *)slider {
@@ -1140,6 +1141,7 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
 }
 
 - (void)_onDragMoving:(NSTimeInterval)progressTime {
+    
     _draggingProgressView.progressTime = progressTime;
     [_draggingProgressView setProgressTimeStr:[_videoPlayer stringForSeconds:progressTime]];
     
@@ -1155,12 +1157,15 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
 }
 
 - (void)_onDragMoveEnd {
-    [_videoPlayer seekToTime:_draggingProgressView.progressTime completionHandler:nil];
-
-    sj_view_makeDisappear(_draggingProgressView, YES, ^{
-        if ( sj_view_isDisappeared(self->_draggingProgressView) ) {
-            [self->_draggingProgressView removeFromSuperview];
-        }
-    });
+    
+    if ([[self.controlView subviews]containsObject:_draggingProgressView]) {
+        [_videoPlayer seekToTime:_draggingProgressView.progressTime completionHandler:nil];
+        sj_view_makeDisappear(_draggingProgressView, YES, ^{
+              if ( sj_view_isDisappeared(self->_draggingProgressView) ) {
+                  [self->_draggingProgressView removeFromSuperview];
+              }
+          });
+    }
+  
 }
 @end
