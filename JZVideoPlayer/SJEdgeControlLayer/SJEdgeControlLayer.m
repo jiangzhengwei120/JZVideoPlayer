@@ -316,8 +316,9 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
 }
 
 - (void)slider:(SJProgressSlider *)slider valueDidChange:(CGFloat)value {
-    if ( slider.isDragging ) 
+    if ( slider.isDragging ){
         [self _onDragMoving:value];
+    }
 }
 
 - (void)sliderDidEndDragging:(SJProgressSlider *)slider {

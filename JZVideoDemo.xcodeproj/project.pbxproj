@@ -443,11 +443,11 @@
 		75985F4723754EA00020E682 /* SJEdgeControlLayer */ = {
 			isa = PBXGroup;
 			children = (
+				75985F5A23754EA00020E682 /* SJEdgeControlLayer.h */,
 				75985F4823754EA00020E682 /* SJEdgeControlLayer.m */,
 				75985F4923754EA00020E682 /* Defines */,
 				75985F4B23754EA00020E682 /* View */,
 				75985F5223754EA00020E682 /* ResourceLoader */,
-				75985F5A23754EA00020E682 /* SJEdgeControlLayer.h */,
 			);
 			path = SJEdgeControlLayer;
 			sourceTree = "<group>";
