@@ -12,6 +12,7 @@
 #import <Masonry.h>
 @interface ViewController ()
 @property (nonatomic,strong) SJVideoPlayer * player;
+@property (nonatomic,assign) NSTimeInterval time;
 @end
 
 @implementation ViewController
@@ -27,20 +28,22 @@
     _player.URLAsset = [SJVideoPlayerURLAsset.alloc initWithURL:SourceURL0];
     _player.view.backgroundColor = UIColor.blackColor;
     [self.view addSubview:_player.view];
+    self.time = 100;
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(100);
         make.left.right.offset(0);
         make.height.equalTo(self.player.view.mas_width).multipliedBy(9/16.0);
     }];
-//    [_player setCanSeekToTime:^BOOL(__kindof SJBaseVideoPlayer * _Nonnull player) {
-//        
-//        
-//        
-//        
-//        return NO;
-//    }];
-    
-   
+    [_player.defaultEdgeControlLayer setCanMoveBlock:^BOOL(NSTimeInterval location) {
+        if (self.time>location) {
+            return YES;
+        }
+        return NO;
+    }];
+    [_player.defaultEdgeControlLayer setTimeChanged:^(NSTimeInterval location) {
+        self.time = MAX(location,self.time);
+    }];
+
     // Do any additional setup after loading the view.
 }
 

@@ -53,6 +53,10 @@ extern SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay;    
 ///
 @property (nonatomic, getter=isDisabledPromptWhenNetworkStatusChanges) BOOL disabledPromptWhenNetworkStatusChanges;
 
+@property (nonatomic,copy) BOOL(^canMoveBlock)(NSTimeInterval location);
+
+@property (nonatomic,copy) void(^timeChanged)(NSTimeInterval location);
+
 ///
 /// 是否使返回按钮常驻
 ///

@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UIImageView *traceImageView;
 
+
+@property (nonatomic,copy) BOOL (^canMoveBlock)(CGFloat vlaue);
+
 /*!
  *  拇指
  */

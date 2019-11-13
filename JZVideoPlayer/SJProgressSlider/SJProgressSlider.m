@@ -96,8 +96,10 @@ NS_ASSUME_NONNULL_BEGIN
     if ( _isCancelled == NO ) {
         CGFloat offset = [pan translationInView:pan.view].x;
         CGFloat add = ( offset / _containerView.bounds.size.width) * ( _maxValue - _minValue );
-        [self setValue:self.value + add animated:YES];
-        [pan setTranslation:CGPointZero inView:pan.view];
+        if ((!self.canMoveBlock)||(self.canMoveBlock&&self.canMoveBlock(self.value + add))) {
+            [self setValue:self.value + add animated:YES];
+            [pan setTranslation:CGPointZero inView:pan.view];
+        }
     }
     
     switch ( pan.state ) {

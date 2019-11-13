@@ -227,6 +227,7 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     
         [self.videoPlayer seekToTime:location completionHandler:nil];
     };
+
     SJEdgeControlButtonItem *progressItem = [[SJEdgeControlButtonItem alloc] initWithCustomView:slider tag:SJEdgeControlLayerBottomItem_Progress];
     progressItem.insets = SJEdgeInsetsMake(8, 8);
     progressItem.fill = YES;
@@ -238,6 +239,15 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     [self.bottomAdapter addItem:fullItem];
 
     [self.bottomAdapter reload];
+}
+
+- (void)setCanMoveBlock:(BOOL (^)(NSTimeInterval location))canMoveBlock{
+    
+    _canMoveBlock = canMoveBlock;
+    SJEdgeControlButtonItem *progressItem = [_bottomAdapter itemForTag:SJEdgeControlLayerBottomItem_Progress];
+    SJProgressSlider *slider = progressItem.customView;
+    slider.canMoveBlock  = canMoveBlock;
+    
 }
 
 - (void)_addItemsToRightAdapter {
@@ -479,6 +489,9 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
 }
 
 - (void)videoPlayer:(__kindof SJBaseVideoPlayer *)videoPlayer currentTimeDidChange:(NSTimeInterval)currentTime {
+    if (self.timeChanged) {
+        self.timeChanged(currentTime);
+    }
     [self _updateBottomCurrentTimeItemIfNeeded];
     [self _updateBottomProgressIndicatorIfNeeded];
     [self _updateBottomProgressSliderItemIfNeeded];
@@ -589,7 +602,11 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
             [self _onDragStart];
             break;
         case SJPanGestureRecognizerStateChanged:
-            [self _onDragMoving:progressTime];
+            if (self.canMoveBlock&&self.canMoveBlock(progressTime)) {
+                [self _onDragMoving:progressTime];
+            }else if (self.canMoveBlock==nil){
+                [self _onDragMoving:progressTime];
+            }
             break;
         case SJPanGestureRecognizerStateEnded:
             [self _onDragMoveEnd];

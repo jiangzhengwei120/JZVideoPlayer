@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)_init;
 + (NSString *)version;
 
-@property (nonatomic,copy) BOOL(^canMoveBlock)(SJVideoPlayer * player,NSTimeInterval location);
+
 
 
 @end
