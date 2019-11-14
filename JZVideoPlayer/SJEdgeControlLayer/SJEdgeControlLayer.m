@@ -246,7 +246,7 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     _canMoveBlock = canMoveBlock;
     SJEdgeControlButtonItem *progressItem = [_bottomAdapter itemForTag:SJEdgeControlLayerBottomItem_Progress];
     SJProgressSlider *slider = progressItem.customView;
-//    slider.canMoveBlock  = canMoveBlock;
+    slider.canMoveBlock  = canMoveBlock;
     
 }
 

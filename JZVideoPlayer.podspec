@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JZVideoPlayer"
-  s.version      = "1.2.2"
+  s.version      = "2.1.0"
   s.summary      = "A short description of JZVideoPlayer."
   s.description  = "video adapter"
   s.homepage     = "https://github.com/jiangzhengwei120/JZVideoPlayer"
