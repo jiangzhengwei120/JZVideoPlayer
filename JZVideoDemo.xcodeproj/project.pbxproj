@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756C8478237D2C7900729560 /* SJIJKMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 756C8472237D2C7900729560 /* SJIJKMediaPlayer.m */; };
+		756C8479237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 756C8475237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.m */; };
+		756C847A237D2C7900729560 /* SJIJKMediaPlaybackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756C8477237D2C7900729560 /* SJIJKMediaPlaybackController.m */; };
 		75985D85237545E40020E682 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75985D84237545E40020E682 /* AppDelegate.m */; };
 		75985D88237545E40020E682 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75985D87237545E40020E682 /* SceneDelegate.m */; };
 		75985D8B237545E40020E682 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75985D8A237545E40020E682 /* ViewController.m */; };
@@ -89,6 +92,12 @@
 		08FBA9659907C816B7E023A1 /* libPods-JZVideoDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JZVideoDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA4835AE026C15D06C7919E /* Pods-JZVideoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZVideoDemo.debug.xcconfig"; path = "Target Support Files/Pods-JZVideoDemo/Pods-JZVideoDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6AD0371C19A3ECC9F5CFE08E /* Pods-JZVideoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZVideoDemo.release.xcconfig"; path = "Target Support Files/Pods-JZVideoDemo/Pods-JZVideoDemo.release.xcconfig"; sourceTree = "<group>"; };
+		756C8472237D2C7900729560 /* SJIJKMediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJIJKMediaPlayer.m; sourceTree = "<group>"; };
+		756C8473237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIJKMediaPlayerDefinitionPrepareStatusObserver.h; sourceTree = "<group>"; };
+		756C8474237D2C7900729560 /* SJIJKMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIJKMediaPlayer.h; sourceTree = "<group>"; };
+		756C8475237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJIJKMediaPlayerDefinitionPrepareStatusObserver.m; sourceTree = "<group>"; };
+		756C8476237D2C7900729560 /* SJIJKMediaPlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIJKMediaPlaybackController.h; sourceTree = "<group>"; };
+		756C8477237D2C7900729560 /* SJIJKMediaPlaybackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJIJKMediaPlaybackController.m; sourceTree = "<group>"; };
 		75985D80237545E40020E682 /* JZVideoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZVideoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75985D83237545E40020E682 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75985D84237545E40020E682 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -240,6 +249,27 @@
 				08FBA9659907C816B7E023A1 /* libPods-JZVideoDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		756C8470237D2C7900729560 /* JZIJKMediaPlaybackController */ = {
+			isa = PBXGroup;
+			children = (
+				756C8471237D2C7900729560 /* Core */,
+				756C8476237D2C7900729560 /* SJIJKMediaPlaybackController.h */,
+				756C8477237D2C7900729560 /* SJIJKMediaPlaybackController.m */,
+			);
+			path = JZIJKMediaPlaybackController;
+			sourceTree = "<group>";
+		};
+		756C8471237D2C7900729560 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				756C8472237D2C7900729560 /* SJIJKMediaPlayer.m */,
+				756C8473237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.h */,
+				756C8474237D2C7900729560 /* SJIJKMediaPlayer.h */,
+				756C8475237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.m */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		75985D77237545E40020E682 = {
@@ -426,6 +456,7 @@
 		75985F3B23754EA00020E682 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				756C8470237D2C7900729560 /* JZIJKMediaPlaybackController */,
 				75985F3C23754EA00020E682 /* SJVideoPlayerControlMaskView.m */,
 				75985F3D23754EA00020E682 /* SJVideoPlayerAnimationHeader.h */,
 				75985F3E23754EA00020E682 /* UIView+SJAnimationAdded.h */,
@@ -801,7 +832,9 @@
 				75985F9123754EA00020E682 /* SJCommonProgressSlider.m in Sources */,
 				75985D8B237545E40020E682 /* ViewController.m in Sources */,
 				75985F9E23754EA00020E682 /* UIView+SJAnimationAdded.m in Sources */,
+				756C8478237D2C7900729560 /* SJIJKMediaPlayer.m in Sources */,
 				75985FAD23754EA00020E682 /* SJVideoPlayerFilmEditingConfig.m in Sources */,
+				756C847A237D2C7900729560 /* SJIJKMediaPlaybackController.m in Sources */,
 				75985FA323754EA00020E682 /* SJNetworkLoadingView.m in Sources */,
 				75985F9423754EA00020E682 /* SJControlLayerSwitcher.m in Sources */,
 				75985FB823754EA00020E682 /* SJFilmEditingControlLayer.m in Sources */,
@@ -812,6 +845,7 @@
 				75985FB723754EA00020E682 /* SJFilmEditingBackButton.m in Sources */,
 				75985FA623754EA00020E682 /* UIView+SJVideoPlayerSetting.m in Sources */,
 				75985FBC23754EA00020E682 /* SJFloatSmallViewControlLayer.m in Sources */,
+				756C8479237D2C7900729560 /* SJIJKMediaPlayerDefinitionPrepareStatusObserver.m in Sources */,
 				75985F9B23754EA00020E682 /* SJEdgeControlLayerAdapters.m in Sources */,
 				75985F9C23754EA00020E682 /* SJVideoPlayerControlMaskView.m in Sources */,
 				75985F9523754EA00020E682 /* SJSwitchVideoDefinitionControlLayer.m in Sources */,

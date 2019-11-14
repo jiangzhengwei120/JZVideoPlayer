@@ -215,6 +215,9 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     slider.enableBufferProgress = YES;
     __weak typeof(self) _self = self;
     slider.tappedExeBlock = ^(SJProgressSlider * _Nonnull slider, CGFloat location) {
+        if (self.canMoveBlock&&(!self.canMoveBlock(location))) {
+            return;
+        }
         __strong typeof(_self) self = _self;
         if ( !self ) return;
         if (self.videoPlayer.canSeekToTime && self.videoPlayer.canSeekToTime(self.videoPlayer) == NO ) {
