@@ -241,7 +241,7 @@ SJEdgeControlButtonItemTag const SJEdgeControlLayerCenterItem_Replay = 40000;
     [self.bottomAdapter reload];
 }
 
-- (void)setCanMoveBlock:(BOOL (^)(NSTimeInterval location))canMoveBlock{
+- (void)setCanMoveBlock:(BOOL (^)(CGFloat location))canMoveBlock{
     
     _canMoveBlock = canMoveBlock;
     SJEdgeControlButtonItem *progressItem = [_bottomAdapter itemForTag:SJEdgeControlLayerBottomItem_Progress];
